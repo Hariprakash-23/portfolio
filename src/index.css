@@ -64,7 +64,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.3); /* adjust opacity: 0.3–0.5 works well */
+  background: rgba(0, 0, 0, 0.2); /* adjust opacity: 0.3–0.5 works well */
   z-index: -1;
 }
   h1, h2, h3, h4, h5, h6 {
@@ -197,4 +197,29 @@
 }
 ::-webkit-scrollbar-thumb:hover {
   background: hsl(var(--primary) / 0.5);
+}
+
+#about p,
+#skills li,
+#projects p {
+  font-size: 1.125rem; /* 18px */
+  line-height: 1.7;
+}
+
+
+.glass-section {
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 2rem;
+  box-shadow: 0 25px 40px -15px rgba(0, 0, 0, 0.6);
+  padding: 2.5rem;
+}
+
+@media (max-width: 768px) {
+  .glass-section {
+    padding: 1.5rem;
+    border-radius: 1.5rem;
+  }
 }

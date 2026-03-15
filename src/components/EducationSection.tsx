@@ -40,61 +40,46 @@ const EducationSection = () => {
       <div ref={ref} className="section-container">
         <SectionHeading title="Education & Activities" subtitle="Academic foundation and extracurricular pursuits" />
 
-        {/* Education Timeline */}
-        <div className="max-w-3xl mx-auto mb-12">
-          <div className="relative border-l-2 border-primary/30 pl-8 space-y-10">
-            {education.map((edu, i) => (
-              <div
-                key={i}
-                className={`relative transition-all duration-700 ${
-                  isVisible ? "animate-fade-in-up opacity-100" : "opacity-0"
-                }`}
-                style={{ animationDelay: `${i * 150}ms` }}
-              >
-                <div className="absolute -left-[41px] w-4 h-4 rounded-full bg-primary border-4 border-background" />
-                <div className="glass-card p-6">
-                  <div className="flex items-center gap-2 mb-1">
-                    <GraduationCap size={18} className="text-primary" />
-                    <h3 className="font-display font-bold text-foreground">{edu.institution}</h3>
-                  </div>
-                  <div className="flex items-center gap-2 text-xs text-muted-foreground mb-2">
-                    <MapPin size={12} />
-                    {edu.location}
-                  </div>
-                  <p className="text-muted-foreground text-sm mb-2">{edu.degree}</p>
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-1 text-xs text-primary">
-                      <Calendar size={12} />
-                      {edu.period}
+        {/* Glass card container */}
+        <div className="rounded-3xl bg-black/35 backdrop-blur-md border border-white/10 shadow-2xl p-8 md:p-10">
+          {/* Education Timeline */}
+          <div className="max-w-3xl mx-auto mb-12">
+            <div className="relative border-l-2 border-primary/60 pl-8 space-y-10">
+              {education.map((edu, i) => (
+                <div
+                  key={i}
+                  className={`relative transition-all duration-700 ${
+                    isVisible ? "animate-fade-in-up opacity-100" : "opacity-0"
+                  }`}
+                  style={{ animationDelay: `${i * 150}ms` }}
+                >
+                  <div className="absolute -left-[41px] w-4 h-4 rounded-full bg-primary border-4 border-background" />
+                  <div className="glass-card p-6">
+                    <div className="flex items-center gap-2 mb-1">
+                      <GraduationCap size={38} className="text-primary" />
+                      <h3 className="font-display font-bold text-foreground">{edu.institution}</h3>
                     </div>
-                    <span className="text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full">
-                      {edu.grade}
-                    </span>
+                    <div className="flex items-center gap-2 text-xs text-muted-foreground mb-2">
+                      <MapPin size={20} />
+                      {edu.location}
+                    </div>
+                    <p className="text-muted-foreground text mb-2">{edu.degree}</p>
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-1 text text-primary">
+                        <Calendar size={18} />
+                        {edu.period}
+                      </div>
+                      <span className="text-sm font-semibold text-primary bg-primary/25 px-3 py-1 rounded-full">
+                        {edu.grade}
+                      </span>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
 
-        {/* Extra Curricular */}
-        <div className="max-w-3xl mx-auto">
-          <h3 className="font-display font-bold text-foreground text-xl mb-6 text-center">
-            Extra Curricular & Training
-          </h3>
-          <div className="space-y-4">
-            {extraCurricular.map((item, i) => (
-              <div
-                key={i}
-                className={`glass-card p-5 transition-all duration-700 ${
-                  isVisible ? "animate-fade-in-up opacity-100" : "opacity-0"
-                }`}
-                style={{ animationDelay: `${(i + 3) * 150}ms` }}
-              >
-                <p className="text-muted-foreground text-sm leading-relaxed">{item}</p>
-              </div>
-            ))}
-          </div>
+          
         </div>
       </div>
     </section>

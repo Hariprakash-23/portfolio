@@ -2,11 +2,7 @@ import { useEffect, useState } from "react";
 import { Download, FolderOpen, Mail } from "lucide-react";
 import heroPhoto from "@/assets/hero-photo.png";
 
-const titles = [
-  "Cloud Engineer",
-  "AI Developer",
-  "Software Engineer",
-];
+const titles = ["Aspiring Cloud Engineer",];
 
 const HeroSection = () => {
   const [titleIndex, setTitleIndex] = useState(0);
@@ -38,9 +34,9 @@ const HeroSection = () => {
   return (
     <section
       id="hero"
-      className="min-h-screen flex items-center relative overflow-hidden"
+      className="relative min-h-screen flex items-center overflow-hidden"
     >
-      {/* Floating particles */}
+      {/* Floating particles (unchanged) */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {[...Array(25)].map((_, i) => (
           <div
@@ -51,11 +47,12 @@ const HeroSection = () => {
               height: Math.random() * 4 + 2 + "px",
               left: Math.random() * 100 + "%",
               top: Math.random() * 100 + "%",
-              background: i % 3 === 0
-                ? "hsl(270 80% 65% / 0.3)"
-                : i % 3 === 1
-                ? "hsl(210 100% 55% / 0.3)"
-                : "hsl(180 100% 50% / 0.2)",
+              background:
+                i % 3 === 0
+                  ? "hsla(245, 75%, 60%, 0.4)"
+                  : i % 3 === 1
+                  ? "hsla(245, 60%, 70%, 0.4)"
+                  : "hsla(0, 0%, 100%, 0.2)",
               animation: `float ${Math.random() * 6 + 4}s ease-in-out infinite`,
               animationDelay: Math.random() * 5 + "s",
             }}
@@ -65,9 +62,9 @@ const HeroSection = () => {
 
       <div className="section-container w-full pt-20">
         <div className="flex flex-col-reverse lg:flex-row items-center gap-12 lg:gap-16">
-          {/* Left - Info in glass card */}
+          {/* Left - Info (unchanged) */}
           <div className="flex-1 animate-fade-in-up">
-            <div className="glass-card p-8 md:p-10" style={{ borderRadius: '20px' }}>
+            <div className="glass-card p-8 md:p-10" style={{ borderRadius: "20px" }}>
               <p className="text-primary font-medium mb-3 tracking-wider uppercase text-sm">
                 Welcome to my portfolio
               </p>
@@ -82,7 +79,8 @@ const HeroSection = () => {
                 <span className="inline-block w-0.5 h-5 bg-primary ml-1 animate-pulse" />
               </div>
               <p className="text-muted-foreground mb-8 max-w-lg leading-relaxed">
-                Crafting intelligent systems and scalable cloud architectures that transform ideas into impactful, production-ready solutions.
+                Crafting intelligent systems and scalable cloud architectures that transform
+                ideas into impactful, production-ready solutions.
               </p>
               <div className="flex flex-wrap gap-4">
                 <a
@@ -110,18 +108,20 @@ const HeroSection = () => {
             </div>
           </div>
 
-          {/* Right - Photo with glow */}
+          {/* Right - Profile photo (smaller container) */}
           <div className="flex-shrink-0 group">
             <div className="relative">
+              {/* Glow effect */}
               <div className="absolute -inset-6 rounded-full bg-gradient-to-r from-primary/30 via-secondary/20 to-primary/30 blur-3xl animate-pulse-glow" />
-              <div className="relative w-64 h-64 sm:w-80 sm:h-80 rounded-full overflow-hidden neon-border p-1 transition-transform duration-500 group-hover:scale-105">
+              {/* Circular frame - reduced size */}
+              <div className="relative w-36 h-36 sm:w-48 sm:h-48 md:w-56 md:h-56 rounded-full overflow-hidden neon-border p-1 transition-transform duration-500 group-hover:scale-105">
                 <img
                   src={heroPhoto}
                   alt="Hariprakash K A - Cloud & AI Engineer"
                   className="w-full h-full object-cover rounded-full"
                 />
               </div>
-              {/* Orbiting dots */}
+              {/* Orbiting dots (optional, kept) */}
               <div className="absolute -inset-8 animate-spin-slow pointer-events-none">
                 <div className="absolute top-0 left-1/2 w-2 h-2 rounded-full bg-primary/60" />
                 <div className="absolute bottom-0 right-0 w-3 h-3 rounded-full bg-secondary/50" />
