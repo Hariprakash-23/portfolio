@@ -27,7 +27,7 @@ const badges = [
     verifyUrl: "https://www.credly.com/earner/earned/badge/2e0d913f-c874-42bf-bead-1198620c03c9"
   },
   { 
-    title: "Postman API Fundamentals", 
+    title: "Postman API Fundamentals (Postman)", 
     image: postmanBadgeImg,
     issuer: "Postman",
     date: "2025",
