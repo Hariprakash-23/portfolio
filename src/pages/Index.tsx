@@ -5,11 +5,11 @@ import ResumeSection from "@/components/ResumeSection";
 import SkillsSection from "@/components/SkillsSection";
 import ProjectsSection from "@/components/ProjectsSection";
 import CertificatesSection from "@/components/CertificatesSection";
-import AchievementsSection from "@/components/AchievementsSection";
 import EducationSection from "@/components/EducationSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import LoadingScreen from "@/components/LoadingScreen";
+import ExtraCurricularSection from "@/components/ExtraCurricularSection";
 
 const Index = () => {
   return (
@@ -23,8 +23,8 @@ const Index = () => {
         <SkillsSection />
         <ProjectsSection />
         <CertificatesSection />
-        <AchievementsSection />
         <EducationSection />
+        <ExtraCurricularSection />
         <ContactSection />
       </main>
       <Footer />

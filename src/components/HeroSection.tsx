@@ -79,8 +79,7 @@ const HeroSection = () => {
                 <span className="inline-block w-0.5 h-5 bg-primary ml-1 animate-pulse" />
               </div>
               <p className="text-muted-foreground mb-8 max-w-lg leading-relaxed">
-                Crafting intelligent systems and scalable cloud architectures that transform
-                ideas into impactful, production-ready solutions.
+                Building intelligent systems and cloud solutions that don’t just work — they think, adapt, and scale with purpose.
               </p>
               <div className="flex flex-wrap gap-4">
                 <a

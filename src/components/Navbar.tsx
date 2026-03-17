@@ -8,6 +8,7 @@ const navLinks = [
   { label: "Projects", href: "#projects" },
   { label: "Certificates", href: "#certificates" },
   { label: "Education", href: "#education" },
+  { label: "Extra", href: "#extra" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -29,7 +30,7 @@ const Navbar = () => {
           : "bg-transparent"
       }`}
     >
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full px-10">
         <div className="flex items-center justify-between h-16">
           <a href="#hero" className="font-display font-bold text-xl gradient-text">
             Portfolio

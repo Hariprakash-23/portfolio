@@ -15,14 +15,14 @@ const education = [
     location: "Trichy, Tamil Nadu",
     degree: "CBSE – Senior Secondary",
     period: "2023",
-    grade: "85.4%",
+    grade: "8.54",
   },
   {
     institution: "Sri Vageesha Vidhyashram",
     location: "Trichy, Tamil Nadu",
     degree: "CBSE – Secondary",
     period: "2021",
-    grade: "82.2%",
+    grade: "8.22",
   },
 ];
 
@@ -41,7 +41,7 @@ const EducationSection = () => {
         <SectionHeading title="Education & Activities" subtitle="Academic foundation and extracurricular pursuits" />
 
         {/* Glass card container */}
-        <div className="rounded-3xl bg-black/35 backdrop-blur-md border border-white/10 shadow-2xl p-8 md:p-10">
+        <div className="rounded-3xl bg-black/65 backdrop-blur-md border border-white/10 shadow-2xl p-8 md:p-10">
           {/* Education Timeline */}
           <div className="max-w-3xl mx-auto mb-12">
             <div className="relative border-l-2 border-primary/60 pl-8 space-y-10">
@@ -56,7 +56,7 @@ const EducationSection = () => {
                   <div className="absolute -left-[41px] w-4 h-4 rounded-full bg-primary border-4 border-background" />
                   <div className="glass-card p-6">
                     <div className="flex items-center gap-2 mb-1">
-                      <GraduationCap size={38} className="text-primary" />
+                      <GraduationCap size={28} className="text-primary" />
                       <h3 className="font-display font-bold text-foreground">{edu.institution}</h3>
                     </div>
                     <div className="flex items-center gap-2 text-xs text-muted-foreground mb-2">
@@ -66,7 +66,7 @@ const EducationSection = () => {
                     <p className="text-muted-foreground text mb-2">{edu.degree}</p>
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-1 text text-primary">
-                        <Calendar size={18} />
+                        <Calendar size={14} />
                         {edu.period}
                       </div>
                       <span className="text-sm font-semibold text-primary bg-primary/25 px-3 py-1 rounded-full">

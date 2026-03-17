@@ -7,6 +7,9 @@ import postmanImg from "@/assets/postman.png";
 import certificate1Img from "@/assets/certificate1.png";
 import certificate2Img from "@/assets/certificate2.png";
 import certificate3Img from "@/assets/certificate3.png";
+import postmanBadgeImg from "@/assets/postman-badge.png";
+import mongodbBadgeImg from "@/assets/mongodb-badge.png";
+import awsImg from "@/assets/aws.png";
 
 const certificates = [
   { title: "Postman API Fundamentals Student Expert", image: postmanImg, date: "November 2025" },
@@ -16,8 +19,24 @@ const certificates = [
 ];
 
 const badges = [
-  { title: "AWS Cloud Architect (Trained)", image: "https://media.licdn.com/dms/image/sync/v2/D5627AQFOVbfgKrX1Pg/articleshare-shrink_1280_800/B56ZnmTGEfHUAQ-/0/1760505389736?e=2147483647&v=beta&t=FoUqqGI-zoLjlZBgfv0uO5W0L-HkF_SZ0pj2h9pd6vo", date: "2025" },
-  { title: "HackerRank Python (Basic)", image: "https://media.licdn.com/dms/image/v2/D5622AQEpOjgma5SSug/feedshare-shrink_800/feedshare-shrink_800/0/1716311459481?e=2147483647&v=beta&t=7j8bVguAKLJt9IrMKEFxYph5oNe2X76VPX9iBBHoSRE", date: "2024" },
+  { 
+    title: "CRUD Operations in MongoDB", 
+    image: mongodbBadgeImg,
+    issuer: "MongoDB University",
+    date: "2025" 
+  },
+  { 
+    title: "Postman API Fundamentals", 
+    image: postmanBadgeImg,
+    issuer: "Postman",
+    date: "2025" 
+  },
+  { 
+    title: "AWS Cloud Architect (Trained)", 
+    image: awsImg,
+    issuer: "AWS Academy",
+    date: "2025"
+  },
 ];
 
 const CertificatesSection = () => {
@@ -30,7 +49,7 @@ const CertificatesSection = () => {
 
         {/* Glass container wrapping both sections */}
         <div className="rounded-3xl bg-black/30 backdrop-blur-md border border-white/10 shadow-2xl p-8 md:p-10">
-          {/* Certificates Grid (unchanged) */}
+          {/* Certificates Grid */}
           <div className="mb-12">
             <h3 className="text-2xl font-display font-bold text-foreground mb-6 flex items-center gap-2">
               <Award className="text-primary" size={24} />
@@ -79,7 +98,8 @@ const CertificatesSection = () => {
             </div>
           </div>
 
-          {/* Badges Grid – redesigned with zoomed images to remove white space */}
+          {/* Badges Grid – Compact, professional view */}
+          {/* Badges Grid – Professional, clear view */}
 <div>
   <h3 className="text-2xl font-display font-bold text-foreground mb-6 flex items-center gap-2">
     <Medal className="text-primary" size={24} />
@@ -89,32 +109,33 @@ const CertificatesSection = () => {
     {badges.map((badge, i) => (
       <a
         key={badge.title}
-        href={badge.link || badge.image}
+        href={badge.image}
         target="_blank"
         rel="noopener noreferrer"
-        className={`glass-card p-5 flex flex-col items-center text-center transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl ${
+        className={`glass-card p-6 flex items-center gap-5 transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl ${
           isVisible ? "animate-fade-in-up opacity-100" : "opacity-0"
         }`}
         style={{ animationDelay: `${(i + certificates.length) * 100}ms` }}
       >
-        {/* Badge image container with zoom to crop white space */}
-        <div className="w-full aspect-square mb-4 flex items-center justify-center overflow-hidden bg-muted/10 rounded-xl">
+        {/* Larger badge icon */}
+        <div className="w-20 h-20 rounded-xl bg-muted/10 flex items-center justify-center overflow-hidden flex-shrink-0">
           <img
             src={badge.image}
             alt={badge.title}
-            className="w-full h-full object-cover scale-125 transform-gpu"
-            style={{ objectPosition: "center" }}
+            className="w-16 h-16 object-contain"
             onError={(e) => {
               e.currentTarget.style.display = "none";
-              e.currentTarget.parentElement!.innerHTML = '<Medal class="w-12 h-12 text-primary/60" />';
+              e.currentTarget.parentElement!.innerHTML = '<Medal class="w-10 h-10 text-primary/60" />';
             }}
           />
         </div>
         {/* Badge info */}
-        <h4 className="font-display font-semibold text-foreground text-sm leading-tight">
-          {badge.title}
-        </h4>
-        <p className="text-xs text-muted-foreground mt-1">{badge.date}</p>
+        <div className="flex-1 min-w-0">
+          <h4 className="font-display font-semibold text-foreground text-lg leading-tight">
+            {badge.title}
+          </h4>
+          <p className="text-base text-muted-foreground mt-1.5">{badge.issuer} · {badge.date}</p>
+        </div>
       </a>
     ))}
   </div>

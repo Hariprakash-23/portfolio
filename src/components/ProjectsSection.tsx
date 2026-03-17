@@ -13,7 +13,11 @@ const projects = [
     description: (
       <>
         <p>
-          A comprehensive Django-based web application that streamlines academic administration with role-based access for teachers and students. Teachers manage student profiles, courses, attendance, and marks through full CRUD dashboards, while students access their records securely. Integrates AWS S3 for attendance archival and SNS for automated academic notifications.
+          A comprehensive, real-world academic management platform built to streamline institutional workflows through secure, role-based access.
+
+The system features dedicated dashboards where teachers manage student records, courses, attendance, and performance using full CRUD capabilities, while students securely access their academic information with ease.
+
+A cloud-integrated architecture leveraging AWS S3 for scalable attendance storage and SNS for automated notifications ensures efficient communication and reduced manual effort across the institution.
         </p>
       </>
     ),
@@ -29,7 +33,11 @@ const projects = [
     description: (
       <>
         <p>
-          An intelligent chatbot that helps travelers navigate complex airport environments using real-time flight data and airport maps. Delivers proactive notifications for gate changes, boarding updates, and security delays. Improves travel efficiency, providing up to 90% faster navigation guidance.
+          A real-world intelligent chatbot designed to simplify airport navigation and enhance the travel experience through real-time, context-aware assistance.
+
+Integration with live flight data, airport maps, and user preferences enables personalized guidance, along with proactive alerts for gate changes, boarding updates, and security delays.
+
+A high-impact solution delivering up to 90% faster navigation support, especially beneficial for first-time travelers and passengers with tight layovers.
         </p>
       </>
     ),
@@ -45,7 +53,11 @@ const projects = [
     description: (
       <>
         <p>
-          An intelligent educational platform that generates personalized quizzes based on individual student learning progress. Uses AI and greedy algorithms to dynamically adapt question difficulty and content. Achieves up to 94% improvement in question-selection accuracy compared to static systems.
+          An advanced, real-world educational platform focused on delivering personalized learning through intelligent quiz generation.
+
+A system powered by AI algorithms and greedy techniques that dynamically adapts question difficulty and selection based on individual student performance and learning patterns.
+
+A high-precision solution achieving up to 80% improvement in question-selection accuracy, significantly outperforming traditional static quiz systems.
         </p>
       </>
     ),
@@ -64,12 +76,13 @@ const ProjectsSection = () => {
   return (
     <section id="projects">
       <div ref={ref} className="section-container">
+        <SectionHeading title="Projects" subtitle="Real-world Solutions I've built" />
+          
         <div
           className={`glass-section max-w-6xl mx-auto transition-all duration-700 ${
             isVisible ? "animate-fade-in-up opacity-100" : "opacity-0"
           }`}
         >
-          <SectionHeading title="Projects" subtitle="Real-world engineering solutions I've built" />
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {projects.map((project, i) => (
               <div
