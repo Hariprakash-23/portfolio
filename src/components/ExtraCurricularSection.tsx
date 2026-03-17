@@ -1,9 +1,9 @@
-import { Edit, TrendingUp, Video } from "lucide-react";
+import { Edit, TrendingUp, Video, ExternalLink } from "lucide-react";
 import SectionHeading from "./SectionHeading";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const activities = [
-    {
+  {
     icon: <Video size={32} />,
     title: "YouTube Content Creation",
     description:
@@ -11,7 +11,6 @@ const activities = [
     link: "https://studio.youtube.com/channel/UCow4z2M9TnZtotELvQIl2dA/videos/upload?filter=%5B%5D&sort=%7B%22columnType%22%3A%22date%22%2C%22sortOrder%22%3A%22DESCENDING%22%7D",
     linkText: "Watch Videos",
   },
-  
   {
     icon: <TrendingUp size={32} />,
     title: "Amazon Affiliate Marketing",
@@ -20,7 +19,6 @@ const activities = [
     link: "#", // Replace with your affiliate link when available
     linkText: "Learn More",
   },
-  
   {
     icon: <Edit size={32} />,
     title: "Freelance Editing",
@@ -66,12 +64,13 @@ const ExtraCurricularSection = () => {
                     href={item.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-primary text-sm font-medium hover:underline mt-auto"
+                    className="mt-auto w-full bg-primary text-white font-bold py-2.5 px-4 rounded-lg hover:bg-primary/80 transition-all duration-300 inline-flex items-center justify-center gap-2"
                   >
-                    {item.linkText} →
+                    {item.linkText} <ExternalLink size={16} />
                   </a>
                 ) : (
                   <span className="text-muted-foreground text-sm mt-auto">
+                    {/* Optionally add "Coming soon" text */}
                   </span>
                 )}
               </div>
